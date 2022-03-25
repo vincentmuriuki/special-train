@@ -1,0 +1,27 @@
+# vendor files
+node_modules
+
+# build files
+build
+docs/swagger/dist/docu.yaml
+docs/swagger/dist/components/*
+
+
+# IDE FILES
+.idea
+
+.dccache
+
+# Config files
+config/databases/*.json
+config/ssl/local/localhost.*
+config/local.ts
+
+# Vault pem
+config/ssl/vault.pem
+
+# Log files
+.logs/*
+
+#custom
+yarn-error.*
