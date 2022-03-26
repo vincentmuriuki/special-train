@@ -9,6 +9,7 @@ docs/swagger/dist/components/*
 
 # IDE FILES
 .idea
+.env
 
 .dccache
 
