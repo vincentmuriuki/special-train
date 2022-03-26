@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  clevel:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - type: bind
+        source: ./src/
+        target: /app/src/
+      - type: bind
+        source: ./package.json
+        target: /app/package.json
+      - type: bind
+        source: ./nodemon.json
+        target: /app/nodemon.json
+    env_file: .env
+    ports:
+      - "8080:8080"
+    networks:
+      - tmnetwork
+  clevelPostgres:
+    image: "postgres:alpine"
+    volumes:
+      - my_dbdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "tmtemplate"
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "55432:5432"
+    networks:
+      - tmnetwork
+volumes:
+  my_dbdata:
+networks:
+  tmnetwork:
+    driver: bridge
