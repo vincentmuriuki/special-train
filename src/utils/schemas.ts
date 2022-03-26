@@ -5,7 +5,7 @@ export const schemaErrorMessage = (message: any) => () => message;
 const signupSchema = Joi.object()
   .keys({
     firstName: Joi.string().strict().trim(),
-    lasstName: Joi.string().strict().trim(),
+    lastName: Joi.string().strict().trim(),
     email: Joi.string().strict().trim().email().required(),
     password: Joi.string()
       .regex(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/)
@@ -19,3 +19,5 @@ const signupSchema = Joi.object()
 const schema: Record<string, any> = {
   "/auth/signup": signupSchema,
 };
+
+export default schema;

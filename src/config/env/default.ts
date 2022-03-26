@@ -2,7 +2,7 @@ import dotenv = require("dotenv");
 
 dotenv.config();
 const config = {
-  PORT: process.env.PORT || 3099,
+  PORT: process.env.PORT || 8080,
   secret: process.env.SECRET,
   database: {
     url: process.env.DEV_DATABASE_URL,

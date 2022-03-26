@@ -1,10 +1,10 @@
-import { User } from '../models/User';
-import hash from '../utils/hash';
-import db from '../utils/sequelize';
+import { User } from "../models/User";
+import hash from "../utils/hash";
+import db from "../utils/sequelize";
 
-export default class UserService {
-    /**
-   * @param userData - used to create a new user
+class UserService {
+  /**
+   * @param userData
    * @returns object
    */
   async createUser(data: any): Promise<any> {
@@ -22,3 +22,5 @@ export default class UserService {
     return user;
   }
 }
+
+export default new UserService();
